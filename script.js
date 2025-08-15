@@ -1,4 +1,3 @@
-
 /* ===== Reveal on Scroll ===== */
 const observer = new IntersectionObserver((entries)=>{
   entries.forEach(entry=>{
@@ -57,3 +56,38 @@ if(form){
     }
   });
 }
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.querySelector("form");
+  const note = document.getElementById("form-note");
+
+  form.addEventListener("submit", async function(event) {
+    event.preventDefault(); // Μην αλλάξεις σελίδα
+
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        note.textContent = "✅ Ευχαριστούμε! Η επιβεβαίωση στάλθηκε.";
+        note.style.color = "green";
+        form.reset();
+      } else {
+        const errorData = await response.json();
+        note.textContent = errorData.errors
+          ? errorData.errors.map(e => e.message).join(", ")
+          : "❌ Σφάλμα αποστολής.";
+        note.style.color = "red";
+      }
+    } catch (err) {
+      note.textContent = "❌ Σφάλμα σύνδεσης.";
+      note.style.color = "red";
+    }
+  });
+});
