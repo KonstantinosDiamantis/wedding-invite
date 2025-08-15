@@ -91,3 +91,41 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.getElementById("rsvp-form");
+  const note = document.getElementById("form-note");
+
+  form.addEventListener("submit", async function(event) {
+    event.preventDefault(); // Μην αλλάξεις σελίδα
+
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        note.textContent = "✅ Ευχαριστούμε! Η επιβεβαίωση στάλθηκε.";
+        note.classList.remove("error");
+        note.classList.add("success");
+        form.reset();
+      } else {
+        const errorData = await response.json();
+        note.textContent = errorData.errors
+          ? errorData.errors.map(e => e.message).join(", ")
+          : "❌ Σφάλμα αποστολής.";
+        note.classList.remove("success");
+        note.classList.add("error");
+      }
+    } catch (err) {
+      note.textContent = "❌ Σφάλμα σύνδεσης.";
+      note.classList.remove("success");
+      note.classList.add("error");
+    }
+  });
+});
