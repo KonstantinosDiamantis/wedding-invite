@@ -173,3 +173,27 @@ fieldset legend{font-weight:600; padding:0 6px}
     border-radius: 18px;
   }
 }
+.invitation-text-card {
+  text-align: center;
+  padding: 36px 24px;
+  font-family: 'Great Vibes', cursive;
+  color: #111;
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  background: var(--paper);
+}
+
+.invitation-text {
+  font-size: clamp(22px, 2.5vw, 36px);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.invitation-subtext {
+  font-family: 'Inter', sans-serif; /* πιο καθαρό για ονόματα */
+  font-size: clamp(14px, 1.5vw, 18px);
+  line-height: 1.4;
+  color: #333;
+  margin: 0;
+}
+
