@@ -27,14 +27,26 @@ body{
 .container{width:min(1100px, 92%);margin-inline:auto}
 
 .hero{position:relative; padding:64px 0 24px}
+:root {
+  --hero-bg-url: url('desktop.png');
+}
+
+@media (max-width: 719px) {
+  :root {
+    --hero-bg-url: url('mobile.png');
+  }
+}
+
 .hero-bg{
   position:absolute; inset:0;
   background: radial-gradient(1200px 600px at 50% -200px, rgba(0,0,0,.25), transparent),
-              url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1600\" height=\"900\"><rect width=\"100%\" height=\"100%\" fill=\"%23f3f3f3\"/></svg>');
-  background-size:cover;
+              var(--hero-bg-url);
+  background-size: cover;
   filter: blur(2px);
   opacity:.7;
 }
+
+
 .hero-card{ text-align:center; padding:48px 28px }
 .names{
   font-family:'Great Vibes', cursive;
@@ -124,3 +136,41 @@ fieldset legend{font-weight:600; padding:0 6px}
   from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
 }
+.hero-card {
+  text-align:center;
+  padding:0; /* Δεν χρειαζόμαστε padding */
+}
+
+.invitation-img {
+  width: 100%;
+  height: auto;
+  max-width: 1100px;
+  display: block;
+  margin-inline: auto;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12); /* αρχική σκιά */
+  opacity: 0; /* για fade-in */
+  transform: scale(0.95); /* αρχική μικρή κλίμακα για animation */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInImg 1s ease forwards; /* fade-in animation */
+  cursor: pointer;
+}
+
+.invitation-img:hover {
+  transform: translateY(-8px) scale(1.02); /* κίνηση πάνω */
+  box-shadow: 0 30px 60px rgba(0,0,0,0.16); /* εντονότερη σκιά */
+}
+
+@keyframes fadeInImg {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Mobile εικόνα */
+@media (max-width: 719px) {
+  .invitation-img {
+    content: url('invitation-mobile.png');
+  }
+}
+
+
