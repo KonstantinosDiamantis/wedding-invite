@@ -129,3 +129,16 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
+ // Ελέγχουμε το πλάτος οθόνης για mobile εικόνα
+  function updateInvitationImage() {
+    const img = document.querySelector('.invitation-img');
+    if (window.innerWidth <= 719) {
+      img.src = 'invitation-mobile.png';
+    } else {
+      img.src = 'invitation-desktop.png';
+    }
+  }
+
+  // Κλήση κατά τη φόρτωση και στο resize
+  window.addEventListener('load', updateInvitationImage);
+  window.addEventListener('resize', updateInvitationImage);
