@@ -1,74 +1,80 @@
-<!DOCTYPE html>
-<html lang="el">
+<!DOCTYPE html> 
+<html lang="el"> <!-- Ορίζει τη γλώσσα της σελίδας (Ελληνικά) -->
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /> <!-- Κωδικοποίηση χαρακτήρων UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Προσαρμογή για κινητές συσκευές -->
   <meta charset="UTF-8">
-  <title>Προσκλητήριο Γάμου Θεωνία & Αχιλλέας</title>
-  <meta name="description" content="Μινιμαλιστικό προσκλητήριο γάμου με αντίστροφη μέτρηση, χάρτες και φόρμα RSVP." />
+  <title>Προσκλητήριο Γάμου Θεωνία & Αχιλλέας</title> <!-- Τίτλος που εμφανίζεται στο tab του browser -->
+  <meta name="description" content="Μινιμαλιστικό προσκλητήριο γάμου με αντίστροφη μέτρηση, χάρτες και φόρμα RSVP." /> <!-- Περιγραφή για SEO -->
+  
+  <!-- Εισαγωγή γραμματοσειρών από Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Σύνδεση με το εξωτερικό αρχείο CSS -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- Σύνδεσμος για παράκαμψη στο κυρίως περιεχόμενο (προσβασιμότητα) -->
   <a class="skip" href="#main">Μετάβαση στο περιεχόμενο</a>
 
+<!-- Ενότητα Hero με το προσκλητήριο -->
 <header class="hero">
-  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-bg" aria-hidden="true"></div> <!-- Φόντο χωρίς σημασιολογικό περιεχόμενο -->
   <div class="container">
     <div class="hero-card reveal">
-      <img class="invitation-img" src="invitation-desktop.png" alt="Προσκλητήριο Γάμου">
+      <img class="invitation-img" src="invitation-desktop.png" alt="Προσκλητήριο Γάμου"> <!-- Εικόνα προσκλητηρίου -->
     </div>
   </div>
 </header>
 
-
   <main id="main">
     
-<!-- 0 Προσκλητήριο Κείμενο -->
+<!-- (0) Προσκλητήριο Κείμενο -->
 <section class="container section">
   <div class="card reveal invitation-text-card">
     <p class="invitation-text">
-                  Θα χαρούμε να μας τιμήσετε με την παρουσία σας σε αυτή την σημαντική στιγμή μας.
+      Θα χαρούμε να μας τιμήσετε με την παρουσία σας σε αυτή την σημαντική στιγμή μας.
     </p>
     
+    <!-- Οικογένειες -->
     <p class="families-title">Οι οικογένειες</p>
     <div class="families-row">
       <span class="family-left">Κωνσταντίνος & Ζαχαρούλα Σάκκα</span>
       <span class="family-right">Ιωάννης Παπαδόπουλος</span>
     </div>
     
+    <!-- Κουμπάρος -->
     <p class="godparent-title">Ο κουμπάρος μας</p>
     <p class="godparent-name">Ιωάννης Σάκκας</p>
   </div>
 </section>
 
-
-
-
-    
-    <!-- 1) Αντίστροφη μέτρηση -->
+    <!-- (1) Αντίστροφη μέτρηση -->
     <section class="container section">
       <div class="card reveal" id="countdown-card" aria-live="polite">
         <h2>Χρόνος που απομένει</h2>
+        <!-- Κουτιά αντίστροφης μέτρησης -->
         <div id="countdown" class="countdown">
           <div class="time"><span id="days">0</span><small>ημέρες</small></div>
           <div class="time"><span id="hours">0</span><small>ώρες</small></div>
           <div class="time"><span id="minutes">0</span><small>λεπτά</small></div>
           <div class="time"><span id="seconds">0</span><small>δευτ.</small></div>
         </div>
+        <!-- Μήνυμα όταν ξεκινήσει ο γάμος -->
         <p id="started" class="started hidden">Ο γάμος έχει ξεκινήσει!</p>
       </div>
     </section>
 
-    <!-- 2) Χάρτης Μυστηρίου -->
+    <!-- (2) Χάρτης Μυστηρίου -->
     <section class="container section">
       <div class="card reveal">
         <h2>Μυστήριο Γάμου</h2>
         <p class="place">Ιερός Ναός Αγίων Ταξιαρχών</p>
         <p class="address">Κραννώνας, Κιλελέρ 415 00 — 16:00</p>
 
+        <!-- Ενσωματωμένος χάρτης Google Maps -->
         <div class="map-wrap">
           <iframe
             title="Χάρτης Εκκλησίας"
@@ -78,62 +84,84 @@
              src="https://www.google.com/maps?q=39.5695207,22.3578984&hl=el&z=15&output=embed">
           </iframe>
         </div>
+        <!-- Σύνδεσμος για οδηγίες πλοήγησης -->
         <div class="actions">
           <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=39.5695207,22.3578984" target="_blank" rel="noopener">Οδηγίες Πλοήγησης</a>
         </div>
       </div>
     </section>
 
-    <!-- 3) Χάρτης Δεξίωσης -->
-    <section class="container section">
-      <div class="card reveal">
-        <h2>Δεξίωση</h2>
-        <p class="place">Κτήμα Λευκό &amp; Μαύρο</p>
-        <p class="address">Παράδειγμα, Αττική — 20:30</p>
+<!-- (3) Χάρτης Δεξίωσης -->
+<section class="container section">
+  <div class="card reveal">
+    <h2>Δεξίωση</h2>
+    <p class="place">Ανεμόμυλος</p>
+    <p class="address">Γιάννουλη, Λάρισα </p>
 
-        <div class="map-wrap">
-          <iframe
-            title="Χάρτης Δεξίωσης"
-            loading="lazy"
-            allowfullscreen
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=37.9999,23.8000&hl=el&z=14&output=embed">
-          </iframe>
-        </div>
-        <div class="actions">
-          <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=37.9999,23.8000" target="_blank" rel="noopener">Οδηγίες Πλοήγησης</a>
-        </div>
-      </div>
-    </section>
+    <!-- Ενσωματωμένος χάρτης Google Maps -->
+    <div class="map-wrap">
+      <iframe
+        title="Χάρτης Δεξίωσης"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=39.69409,22.39766&hl=el&z=15&output=embed">
+      </iframe>
+    </div>
+    <!-- Σύνδεσμοι για οδηγίες & προβολή στον χάρτη -->
+    <div class="actions">
+      <a class="btn"
+         href="https://www.google.com/maps/dir/?api=1&destination=39.69409,22.39766"
+         target="_blank" rel="noopener">
+        Οδηγίες Πλοήγησης
+      </a>
+      <a class="btn"
+         href="https://maps.app.goo.gl/8GKaDmm2RyY3tL3x7"
+         target="_blank" rel="noopener">
+        Δείτε στον Χάρτη
+      </a>
+    </div>
+  </div>
+</section>
 
-    <!-- 4) Φόρμα RSVP -->
+
+
+    <!-- (4) Φόρμα RSVP -->
     <section class="container section">
       <div class="card reveal" id="rsvp">
         <h2>Επιβεβαίωση Παρουσίας (RSVP)</h2>
         <p class="small-muted">Παρακαλούμε επιβεβαιώστε την παρουσία σας έως 20 Σεπτεμβρίου 2025.</p>
+        
+        <!-- Φόρμα RSVP με Formspree -->
         <form id="rsvp-form" class="form" action="https://formspree.io/f/xeozdnjw" method="POST" novalidate>
           <div class="grid">
+            <!-- Πεδίο Ονοματεπώνυμο -->
             <label>Ονοματεπώνυμο *
               <input type="text" name="name" required placeholder="Πλήρες όνομα" />
             </label>
+            <!-- Πεδίο Email -->
             <label>Email 
               <input type="email" name="email"  placeholder="εσυ@gmail.com" />
             </label>
           </div>
           <div class="grid">
+            <!-- Πεδίο αριθμού ατόμων -->
             <label>Αριθμός Ατόμων *
               <input type="number" name="guests" required min="1" max="20" value="1" />
             </label>
+            <!-- Επιλογή Παρουσίας -->
             <fieldset class="attending">
               <legend>Θα παρευρεθείτε; *</legend>
               <label><input type="radio" name="attend" value="Ναι" required /> Ναι</label>
               <label><input type="radio" name="attend" value="Όχι" /> Όχι</label>
             </fieldset>
           </div>
+          <!-- Μήνυμα (προαιρετικό) -->
           <label>Μήνυμα (προαιρετικό)
             <textarea name="message" rows="4" placeholder="Τυχόν διευκρινίσεις "></textarea>
           </label>
 
+          <!-- Κουμπί Υποβολής -->
           <button class="btn submit" type="submit">Αποστολή Επιβεβαίωσης</button>
           <p class="form-note" id="form-note">Τα πεδία με * είναι υποχρεωτικά.</p>
         </form>
@@ -141,6 +169,7 @@
     </section>
   </main>
 
+  <!-- Υποσέλιδο -->
   <footer class="footer">
     <div class="container">
       <p class="footline">Θεωνία &amp; Αχιλλέας • 5 Οκτωβρίου 2025 • Λάρισα</p>
@@ -148,10 +177,13 @@
     </div>
   </footer>
 
+  <!-- Ορισμός ημερομηνίας γάμου για την αντίστροφη μέτρηση -->
   <script>
     // Ρυθμίσεις αντίστροφης μέτρησης (τοπική ώρα Ελλάδας)
     window.WEDDING_DATE_ISO = '2025-10-05T16:00:00+03:00';
   </script>
+
+  <!-- Σύνδεση με εξωτερικό αρχείο JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>
